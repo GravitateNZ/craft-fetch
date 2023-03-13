@@ -28,7 +28,7 @@ class FetchVariable
      * @param null $optional
      * @return string
      */
-    public function request($client, $method, $destination, $request = [])
+    public function request(array $client, string $method, string $destination, array $request = []): array
     {
 
         $client = new \GuzzleHttp\Client($client);

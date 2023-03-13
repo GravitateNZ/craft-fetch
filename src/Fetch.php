@@ -37,7 +37,7 @@ class Fetch extends Plugin
     /**
      * @var Fetch
      */
-    public static $plugin;
+    public static Fetch $plugin;
 
     // Public Methods
     // =========================================================================
@@ -45,7 +45,7 @@ class Fetch extends Plugin
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;

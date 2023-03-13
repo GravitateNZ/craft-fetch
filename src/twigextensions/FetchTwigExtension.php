@@ -13,27 +13,29 @@ namespace jalendport\fetch\twigextensions;
 use jalendport\fetch\Fetch;
 
 use Craft;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
 
 /**
 * @author    Jalen Davenport
 * @package   Fetch
 * @since     1.1.0
 */
-class FetchTwigExtension extends \Twig_Extension
+class FetchTwigExtension extends AbstractExtension
 {
-  public function getName()
+  public function getName(): string
   {
       return 'Fetch';
   }
 
-  public function getFunctions()
+  public function getFunctions(): array
   {
       return [
-          new \Twig_SimpleFunction('fetch', [$this, 'fetch']),
+          new TwigFunction('fetch', [$this, 'fetch']),
       ];
   }
 
-  public function fetch($client, $method, $destination, $request = [], $parseJson = true)
+  public function fetch(array $client, string $method, string $destination, array $request = [], bool $parseJson = true): array
   {
       $client = new \GuzzleHttp\Client($client);
 

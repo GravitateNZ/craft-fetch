@@ -2,7 +2,6 @@
     "name": "jalendport/craft-fetch",
     "description": "Utilise the Guzzle HTTP client from within your Craft templates.",
     "type": "craft-plugin",
-    "version": "1.3.0",
     "keywords": [
         "craft",
         "cms",
@@ -27,7 +26,7 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0"
+        "craftcms/cms": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
@@ -42,5 +41,11 @@
         "hasCpSection": false,
         "changelogUrl": "https://raw.githubusercontent.com/jalendport/craft-fetch/v1/CHANGELOG.md",
         "class": "jalendport\\fetch\\Fetch"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
     }
 }
